@@ -1,0 +1,49 @@
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import Compiler from './Compiler';
+
+const NodeLesson2 = () => {
+  const [isCorrect, setIsCorrect] = useState(false);
+  const navigate = useNavigate();
+  const handleSuccess = () => setIsCorrect(true);
+  const goToNextLesson = () => navigate('/NodeLesson3');
+
+  return (
+    <div className="lesson">
+      <h1 className="lesson-title">Node.js Lesson 2: Hello World</h1>
+
+      <div className="lesson-content">
+        <p>
+          Create a file <code>app.js</code> and run it with <code>node app.js</code>.
+        </p>
+        <pre>
+{`console.log("Hello from Node.js!");`}
+        </pre>
+      </div>
+
+      <pre className="instructions">
+{`Task:
+1. Print "Hello from Node.js!" to the console.`}
+      </pre>
+
+      <Compiler
+        LessonId="node-lesson-2"
+        language="js"
+        initialCode={`// Write your code here
+`}
+        expectedOutput={(output) =>
+          output.trim() === 'Hello from Node.js!'
+        }
+        onSuccess={handleSuccess}
+      />
+
+      {isCorrect && (
+        <Link to="/NodeLesson3" className="next-lesson" onClick={goToNextLesson}>
+          ⏭ NEXT LESSON
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export default NodeLesson2;

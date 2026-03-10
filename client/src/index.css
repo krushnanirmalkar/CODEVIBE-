@@ -1,0 +1,814 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* background and font */
+body {
+  font-family: 'orbitron', san;
+  background-color: black;
+  background-image: url("background1.jpeg");
+  color: whitesmoke;
+  line-height: 1.6;
+  transition: all 0.3s ease-in-out;
+
+}
+
+
+
+/* header */
+header {
+  background: linear-gradient(135deg, purple, hotpink);
+  /*135deg : top left bottom right */
+  color: whitesmoke;
+  text-align: center;
+  padding: 3rem 1rem;
+  /*rem: root font size 
+    padding : top left bottom right ;
+    here, top/bottom:3rem
+    left right:1rem;
+    1rem=16px*/
+  box-shadow: 0 0 30px purple;
+  /* box-shadow: offset-x offset-y blur-radius color;*/
+  animation: glow 3s infinite alternate;
+  /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
+}
+.Dash{
+  align-items: end;
+}
+@keyframes glow {
+  from {
+    box-shadow: 0 0 15px hotpink;
+  }
+
+  to {
+    box-shadow: 0 0 30 px pink, 0 0 50px purple;
+
+  }
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0.5rem;
+  text-shadow: 2px 2px 5px #000;
+  /* same as box shadow*/
+
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.course-name {
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+h2 {
+  align-items: center;
+  font-size: xx-large;
+  color: #ff99ff;
+  display: flex;
+  justify-content: center;
+}
+
+.course-box {
+  background: #1a1a1a;
+  border: 2px groove transparent;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 300px;
+  border-radius: 12px;
+  color: blanchedalmond;
+  position: relative;
+  transition: transform 0.3s, border 0.3s;
+  animation: borderpulse 4s infinite;
+  box-shadow: 0 0 15px rgb(red, green, blue, 0.5);
+}
+
+@keyframes borderpulse {
+  0% {
+    border-color: hotpink;
+  }
+
+  33% {
+    border-color: #00ffff;
+  }
+
+  66% {
+    border-color: #ffcc00;
+  }
+
+  100% {
+    border-color: #ff00cc;
+  }
+}
+
+.course-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #ff00cc;
+}
+
+.course-box h3 {
+  color: #ffccff;
+}
+
+.course-box a {
+  text-decoration: none;
+  color: whitesmoke;
+  background-image: linear-gradient(135deg, hotpink, purple);
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 0 10px #ff1493;
+  padding: 0.1 rem;
+  justify-content: center;
+}
+
+.course-box a:hover {
+  background: linear-gradient(135deg, rgb(1, 252, 252), rgb(56, 3, 229));
+  transform: scale(1.05);
+  padding: 0.3rem;
+}
+
+.goal {
+  background: #121212;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px dashed #ff66cc;
+  border-bottom: 2px dashed #00ffff;
+
+}
+
+.goal h2 {
+  margin-bottom: 1rem;
+  color: #ff66cc;
+}
+
+.goal ul {
+  list-style: none;
+}
+
+.goal li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #f5f5f5;
+}
+
+footer {
+  background: #1a1a1a;
+  text-align: center;
+  padding: 1rem;
+  color: #ccc;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
+
+footer a {
+  color: #ff99ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #00ffff;
+}
+
+body {
+  background-color: black;
+  color: #ff66cc;
+  font-family: 'Orbitron', sans-serif;
+}
+
+h1 {
+  color: #ff66cc;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to right, #a100ff, #ff1493);
+  box-shadow: 0px 0px 20px pink;
+}
+
+textarea {
+  background-color: #1a1a1a;
+  color: white;
+  width: 300px;
+  height: 100px;
+  border: 2px solid #ff66cc;
+  font-family: monospace;
+  padding: 10px;
+  resize: none;
+}
+
+button {
+  background-color: #ff66cc;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.lesson {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+.lesson ul {
+  margin-left: 20px;
+}
+
+.lesson pre {
+  font-size: 14px;
+  overflow-x: auto;
+}
+
+/* Page Centering */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #001214, #1e0024);
+}
+
+/* Form Styling */
+.login-form {
+  background: rgb(10, 0, 0);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form:hover {
+  transform: scale(1.13);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* universal: stop layout jitters */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* container */
+.Register {
+  display: flex;
+  gap: 12px;
+  /* clear gap so click zones don’t collide */
+  align-items: center;
+}
+
+/* buttons (lock the size) */
+header a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  /* fixed padding */
+  min-height: 36px;
+  /* fixed height feel */
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, hotpink, purple);
+  border: 2px solid transparent;
+  /* same in both states so no jump */
+  font-weight: 600;
+  /* fixed weight */
+  line-height: 1;
+  /* stable height */
+  white-space: nowrap;
+  /* no wrap = no shift */
+  flex-shrink: 0;
+  /* don’t compress in flex */
+  position: static;
+  /* no z-index games */
+  z-index: auto;
+  transition: filter .15s ease;
+  /* visual only, no size change */
+}
+
+/* hover: EXACT same size, just a tiny brightness tweak (or remove line completely) */
+header a:hover {
+  background: linear-gradient(135deg, hotpink, purple);
+  /* lock bg */
+  padding: 8px 16px;
+  /* lock padding */
+  border: 2px solid transparent;
+  /* lock border */
+  font-weight: 600;
+  /* lock weight */
+  transform: none;
+  /* lock transforms */
+  filter: brightness(1.03);
+  /* optional micro effect */
+}
+
+/* active/focus: also size-locked */
+header a:active,
+header a:focus {
+  transform: none;
+  outline: none;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+}
+
+header a,
+header a:hover {
+  transform: none !important;
+}
+
+
+pre {
+  background: linear-gradient(rgb(253, 253, 165), rgb(250, 169, 250));
+  padding: 1em;
+  border-radius: 8px;
+  color: #660252;
+}
+
+h2 {
+  color: lineargraident(rgb(250, 250, 130), rgb(130, 130, 250), rgb(248, 158, 248), rgb(247, 146, 196));
+}
+
+.Html-compiler {
+  background: linear-gradient(145deg, #1c1b2f, #2c1c3c);
+  color: #fceaff;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+  font-family: 'Courier New', monospace;
+}
+
+.Html-compiler h2 {
+  color: #ff85c1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+textarea {
+  background-color: #2b223d;
+  color: #ffeafd;
+  border: 2px solid #ff85c1;
+  width: 100%;
+  height: 160px;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  resize: vertical;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #b185b4;
+}
+
+button {
+  background: #ff45b3;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background: #c23896;
+}
+
+.output {
+  background-color: #1f152a;
+  border: 2px solid #a84fb7;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 10px rgba(255, 182, 193, 0.1);
+  color: #fff;
+}
+
+.output h3 {
+  color: #ffbdfd;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+iframe {
+  width: 100%;
+  height: 180px;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem;
+}
+
+.text-red-500 {
+  color: #ff4d6d;
+}
+
+.text-green-600 {
+  color: #00ffae;
+}
+
+/* next lesson button */
+a {
+  text-decoration: none;
+  color: whitesmoke;
+  background-image: linear-gradient(135deg, hotpink, purple);
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 0 10px #ff1493;
+  padding: 0.1 rem;
+  display: flex;
+  justify-content: center;
+
+}
+
+a:hover {
+  background: linear-gradient(135deg, rgb(1, 252, 252), rgb(56, 3, 229));
+  transform: scale(1.05);
+  padding: 0.3rem;
+
+}
+
+/*lesson middel area */
+.lesson-content {
+  background-color: #11000e;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.sources {
+  margin-top: 20px;
+  background: #26002e;
+  padding: 15px;
+  border-left: 4px solid #1a73e8;
+  border-radius: 6px;
+}
+
+/* Container */
+.certificate-page {
+  background: linear-gradient(135deg, #000000, #ff007f);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.title {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* Input */
+.name-input {
+  padding: 12px 15px;
+  font-size: 1.2rem;
+  border: 2px solid #ff66b2;
+  border-radius: 8px;
+  width: 300px;
+  max-width: 90vw;
+  margin-bottom: 40px;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.name-input:focus {
+  border-color: #ff3385;
+  box-shadow: 0 0 10px #ff3385;
+}
+
+.html-lesson {
+  background-image: url("../src/assets/background2.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+
+}
+
+.html-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+
+
+.css-lesson {
+  background-image: url("../src/assets/background2.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+
+}
+
+.css-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+.js-lesson {
+  background-image: url("../src/assets/background3.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.js-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+.c-lesson {
+  background-image: url("../src/assets/background4.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.c-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+.oop-lesson {
+  background-image: url("../src/assets/background3.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.oop-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+.dsa-lesson {
+  background-image: url("../src/assets/background3.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.dsa-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+.dbms-lesson {
+  background-image: url("../src/assets/background5.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.dbms-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+.dsa-lesson {
+  background-image: url("../src/assets/background6.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.dsa-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+.node-lesson {
+  background-image: url("../src/assets/background6.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.node-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+.mongo-lesson {
+  background-image: url("../src/assets/background7.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.mongo-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+.react-lesson {
+  background-image: url("../src/assets/background1.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.react-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+.express-lesson {
+  background-image: url("../src/assets/background2.jpeg");
+  min-height: 100vh;
+  /* full screen cover */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* koi gap ya extra scroll na aaye */
+}
+
+.express-lesson::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* light dark overlay */
+  pointer-events: none;
+}
+
+/* DASHBOARD */
+.dashboard {
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.dashboard-header {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #a100ff, #ff1493);
+  box-shadow: 0 0 25px rgba(255, 20, 147, 0.6);
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0;
+}
+
+.logout-btn {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 12px #ff4d6d;
+}
+
+.logout-btn:hover {
+  background: #d6336c;
+  box-shadow: 0 0 18px #ff4d6d;
+}
+
+.dashboard-card {
+  background: #1a1a1a;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: left;
+  animation: borderpulse 4s infinite;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+}
+
+.dashboard-card p {
+  font-size: 1.1rem;
+  margin: 0.8rem 0;
+  color: #ffe4ec;
+}
+
+.dashboard-card strong {
+  color: #ff66cc;
+}
+
+
+

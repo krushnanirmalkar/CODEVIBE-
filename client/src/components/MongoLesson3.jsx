@@ -1,0 +1,66 @@
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import Compiler from './Compiler';
+
+const MongoLesson3 = () => {
+  const [isCorrect, setIsCorrect] = useState(false);
+  const navigate = useNavigate();
+  const handleSuccess = () => setIsCorrect(true);
+  const goToNextLesson = () => navigate('/MongoLesson4');
+
+  return (
+    <div className="lesson">
+      <h1 className="lesson-title">MongoDB Lesson 3: Insert Multiple Documents</h1>
+
+      <div className="lesson-content">
+        <p>You can insert multiple documents at once using <code>insertMany()</code>.</p>
+        <pre>
+{`await db.collection('users').insertMany([
+  { name: 'Bob', age: 25 },
+  { name: 'Carol', age: 30 }
+]);`}
+        </pre>
+      </div>
+
+      <pre className="instructions">
+{`Task:
+1. Insert two new users into 'users' collection.
+2. Print "Documents inserted" after success.`}
+      </pre>
+
+      <Compiler
+        LessonId="mongo-lesson-3"
+        language="javascript"
+        initialCode={`const { MongoClient } = require('mongodb');
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
+
+async function run() {
+  try {
+    await client.connect();
+    const db = client.db('mydb');
+    await db.collection('users').insertMany([
+      { name: 'Bob', age: 25 },
+      { name: 'Carol', age: 30 }
+    ]);
+    console.log('Documents inserted');
+  } finally {
+    await client.close();
+  }
+}
+
+run().catch(console.dir);`}
+        expectedOutput={(output) => output.includes('Documents inserted')}
+        onSuccess={handleSuccess}
+      />
+
+      {isCorrect && (
+        <Link to="/MongoLesson4" onClick={goToNextLesson} className="next-lesson">
+          ⏭ NEXT LESSON
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export default MongoLesson3;

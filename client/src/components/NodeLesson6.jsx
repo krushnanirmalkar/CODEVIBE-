@@ -1,0 +1,51 @@
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import Compiler from './Compiler';
+
+const NodeLesson6 = () => {
+  const [isCorrect, setIsCorrect] = useState(false);
+  const navigate = useNavigate();
+  const handleSuccess = () => setIsCorrect(true);
+  const goToNextLesson = () => navigate('/NodeLesson7');
+
+  return (
+    <div className="lesson">
+      <h1 className="lesson-title">Node.js Lesson 6: Events</h1>
+
+      <div className="lesson-content">
+        <p>
+          Node.js can handle events using the EventEmitter class from the 'events' module.
+        </p>
+        <pre>
+{`const EventEmitter = require('events');
+const emitter = new EventEmitter();
+emitter.on('greet', () => console.log('Hello Event!'));
+emitter.emit('greet'); // Hello Event!`}
+        </pre>
+      </div>
+
+      <pre className="instructions">
+{`Task:
+1. Create an event called "greet".
+2. Log "Hello Event!" when it is triggered.`}
+      </pre>
+
+      <Compiler
+        LessonId="node-lesson-6"
+        language="js"
+        initialCode={`// Write your code here
+`}
+        expectedOutput={(output) => output.trim() === 'Hello Event!'}
+        onSuccess={handleSuccess}
+      />
+
+      {isCorrect && (
+        <Link to="/NodeLesson7" onClick={goToNextLesson} className="next-lesson">
+          ⏭ NEXT LESSON
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export default NodeLesson6;

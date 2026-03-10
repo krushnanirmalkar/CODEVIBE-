@@ -1,0 +1,60 @@
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import Compiler from './Compiler';
+
+const CLesson16 = () => {
+  const [isCorrect, setIsCorrect] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSuccess = () => setIsCorrect(true);
+  const goToNextLesson = () => navigate('/CLesson17');
+
+  return (
+    <div className="lesson">
+      <h1 className="lesson-title">Mini Project 1: Calculator</h1>
+
+      <div className="lesson-content">
+        <p>
+          Let's build a simple calculator in C that can add, subtract, multiply, and divide.
+        </p>
+        <p>Example:</p>
+        <pre>
+{`#include <stdio.h>
+
+int main() {
+    int a = 5, b = 3;
+    printf("%d", a + b); // Output: 8
+    return 0;
+}`}
+        </pre>
+      </div>
+
+      <pre className="instructions">
+{`Task:
+1. Take two numbers (fixed values for this test).
+2. Perform addition and print the result.`}
+      </pre>
+
+      <Compiler
+        LessonId="c-lesson-16"
+        language="c"
+        initialCode={`#include <stdio.h>
+
+int main() {
+    // Write your calculator addition here
+    return 0;
+}`}
+        expectedOutput={(output) => output.trim() === "15"}
+        onSuccess={handleSuccess}
+      />
+
+      {isCorrect && (
+        <Link to="/CLesson17" className="next-lesson" onClick={goToNextLesson}>
+          ⏭ NEXT LESSON
+        </Link>
+      )}
+    </div>
+  );
+};
+
+export default CLesson16;
