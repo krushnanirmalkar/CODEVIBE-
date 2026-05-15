@@ -37,7 +37,9 @@ const HtmlLesson2 = () => {
       <h3>
         Note: <em>Opening tag looks like {'<element>'}, and closing tag looks like {'</element>'}. Can you see the difference? The closing tag has a "/" before the element name.</em>
       </h3>
-
+          <br/>
+    <hr/>
+    <br/>
       <p><strong>Common BLOCK LEVEL TAGS AND THEIR USAGE:</strong></p>
       <ul>
         <li><b>{'<div>'}</b>: General-purpose container</li>
@@ -66,7 +68,7 @@ const HtmlLesson2 = () => {
         <li>Mostly used for formatting</li>
       </ol>
 
-      <p><strong>Common INLINE TAGS AND THEIR USAGE:</strong></p>
+      <h4><strong>Common INLINE TAGS AND THEIR USAGE:</strong></h4>
       <ul>
         <li><b>{'<span>'}</b>: Inline container</li>
         <li><b>{'<a>'}</b>: Link</li>
@@ -82,7 +84,9 @@ const HtmlLesson2 = () => {
       <hr />
       <br />
       <p>
-        <ol>INSTRUCTION
+        <ol>
+          <h3> INSTRUCTION </h3>
+          <div className='list'>
           <li>{`<b> bold </b>`}</li>
           <li>{`<i> italic </i>`}</li>
           <li>{`<u> under line </u>`}</li>
@@ -93,8 +97,11 @@ const HtmlLesson2 = () => {
           <li>{`<br>`}</li>
           <li>{`<hr>`}</li>
           <li>{`<abbr>HTML</abbr>`}</li>
+          </div>
         </ol>
       </p>
+    <br/>
+    <hr/>
 
       <h2> 💻 Try Yourself, Follow Instruction !!!</h2>
 

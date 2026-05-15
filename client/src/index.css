@@ -281,6 +281,21 @@ h2 {
   letter-spacing: 2px;
 }
 
+h3 {
+  
+  color: var(--primary-red);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+
+
+
 /* Course Cards - Minecraft Block Style */
 .course-box {
   background: linear-gradient(135deg, #1a1f3a 0%, #242a45 50%, #1a1f3a 100%);
