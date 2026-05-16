@@ -59,6 +59,11 @@ const downloadCode = () => {
 
   const saveProgress = (lessonId, sc, attempt) => {
     const email = localStorage.getItem("userEmail");
+    window.dispatchEvent(
+      new CustomEvent("codevibe-progress-updated", {
+        detail: { lessonId, score: sc },
+      })
+    );
     axios.post(`http://localhost:5002/api/lesson/${lessonId}/complete`, { email, score: sc })
       .catch(err => console.error("Save progress error:", err));
     onSuccess?.({ LessonId: lessonId, score: sc, tries: attempt });
